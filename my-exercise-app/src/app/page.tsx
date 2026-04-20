@@ -1,3 +1,4 @@
+import RenderTime from "@/components/rendertime-text";
 import Image from "next/image";
 
 export default function Home() {
@@ -45,6 +46,8 @@ export default function Home() {
             Documentation
           </a>
         </div>
+
+        <RenderTime time={new Date().toISOString()}/>
       </main>
     </div>
   );

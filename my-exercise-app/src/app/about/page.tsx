@@ -1,10 +1,16 @@
+"use client";
 
-import React from 'react'
+import IncreaseButton from "@/components/increase-button";
 
 function AboutPage() {
+
   return (
-    <div>Welcome to about page</div>
-  )
+    <div>
+      <p>Welcome to about page</p>
+          {/* Client Leaf */}
+          <IncreaseButton />
+    </div>
+  );
 }
 
-export default AboutPage
+export default AboutPage;
