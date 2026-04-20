@@ -1,1 +1,2 @@
 # memotech_intership_nextjs_exercise
+# memotech_intership_nextjs_exercise
