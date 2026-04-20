@@ -1,8 +1,11 @@
 import React from "react";
 import AboutPage from "../about/page";
 
-export default function Blog() {
-  return (
+export default async function Blog() {
+  
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  
+    return (
     <div>
       <div>
         <a href="#">Title 1</a>
