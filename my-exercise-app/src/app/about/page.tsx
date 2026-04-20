@@ -1,4 +1,3 @@
-"use client";
 
 import IncreaseButton from "@/components/increase-button";
 
