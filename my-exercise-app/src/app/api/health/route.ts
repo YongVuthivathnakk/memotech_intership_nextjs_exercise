@@ -4,7 +4,7 @@ export async function GET() {
     }, {status: 200})
 }
 
-export async function POST(request: Request) {
+export async function POST() {
     return Response.json({
         message: "405 Method Not Allowed"
     }, {status: 405})
