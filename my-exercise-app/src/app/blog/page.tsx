@@ -11,6 +11,9 @@ export const revalidate = SECOND;
 
 export default async function Blog() {
   
+    //  throw new Error("Testing error boundary!") // for testing error
+
+
     const data1 = await fetch(' https://jsonplaceholder.typicode.com/posts/1'); // fetch and cache
     const post1 = await data1.json();
 

@@ -13,24 +13,24 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/blog",
-        permanent: false,
-      }
-    ]
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/blog",
+  //       permanent: false,
+  //     }
+  //   ]
+  // },
 
-  async rewrites() {
-    return [
-      {
-        source: "/secret",
-        destination: "/about"
-      }
-    ]
-  }
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/secret",
+  //       destination: "/about",
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

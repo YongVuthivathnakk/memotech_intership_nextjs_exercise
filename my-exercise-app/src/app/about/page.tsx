@@ -15,11 +15,6 @@ import type { Metadata } from "next";
 
 // =================== NextJs Metadata ================
 
-
-export const metatdata: Metadata = {
-  title: "About Page",
-}
-
 function AboutPage() {
 
   return (

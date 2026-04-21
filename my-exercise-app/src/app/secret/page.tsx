@@ -5,7 +5,9 @@ import React from 'react'
 
 async function SecretPage() {
     const isDefined = process.env.EXERCISE_SECRET;
-  return (
+ 
+ 
+    return (
       <div>
           <p>
           Secret Defined: {isDefined ? "yes" : "no"}

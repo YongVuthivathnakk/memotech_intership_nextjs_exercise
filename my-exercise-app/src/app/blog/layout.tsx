@@ -19,7 +19,12 @@ export default function BlogLayout({
         <Link href={"/blog/second-blog"}>Second-Blog</Link>
               
       </nav>
-      <main>{children}</main>
+      <main>
+        
+        
+        {children}
+      
+      </main>
     </>
   );
 }
