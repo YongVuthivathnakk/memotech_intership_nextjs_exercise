@@ -12,6 +12,8 @@ export default getRequestConfig(async ({ requestLocale}) => {
     ? requested
     : routing.defaultLocale;
 
+// locale = "km"
+
   return {
     locale,
     messages: (await import(`../../messages/${locale}.json`)).default,
