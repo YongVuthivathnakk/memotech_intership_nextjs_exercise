@@ -1,4 +1,4 @@
-import NotFound from "@/app/about/not-found";
+import NotFound from "@/app/[locale]/about/not-found";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";

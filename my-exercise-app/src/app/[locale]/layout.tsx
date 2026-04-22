@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Link from "next/link";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,16 +22,20 @@ export const metadata: Metadata = {
 };
 
 async function getUser() {
-     throw new Error("Testing error boundary!") // for testing error
+  throw new Error("Testing error boundary!"); // for testing error
 }
 
-
 export default async function RootLayout({
-  children,
+  children, params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{locale: String}>
 }>) {
   // const user = await getUser();
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound;
+  }
   return (
     <html
       lang="en"
@@ -36,13 +43,14 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <nav>
-          <Link href={'/'}>Home &nbsp;</Link>
-          <Link href={'/blog'}>Blog &nbsp;</Link>
-          <Link href={'/about'}>About &nbsp;</Link>
-          <Link href={'/secret'}>Secret &nbsp;</Link>
+          <Link href={`/${locale}`}>Home &nbsp;</Link>
+          <Link href={`/${locale}/blog`}>Blog &nbsp;</Link>
+          <Link href={`/${locale}/about`}>About &nbsp;</Link>
+          <Link href={`/${locale}/secret`}>Secret &nbsp;</Link>
         </nav>
         <hr />
-        {children}</body>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }
