@@ -48,6 +48,7 @@ export default async function RootLayout({
           <Link href={`/${locale}/about`}>About &nbsp;</Link>
           <Link href={`/${locale}/secret`}>Secret &nbsp;</Link>
           <Link href={`/${locale}/note`}>Note &nbsp;</Link>
+          <Link href={`/${locale}/data`}>Data &nbsp;</Link>
         </nav>
         <hr />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>

@@ -5,6 +5,6 @@ export async function POST(request: Request) {
     const body = await request.json();
     return Response.json({
         message: "revieved",
-        echo: body,
+        echo: body.message,
     }, {status: 201}); // Status 201: request successfully processed and new resource was created.
 }
