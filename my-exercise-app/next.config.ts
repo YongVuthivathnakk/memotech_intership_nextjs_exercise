@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-import { describe } from "node:test";
+// import { describe } from "node:test";
 
 const nextConfig: NextConfig = {
   /* config options here */

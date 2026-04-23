@@ -1,7 +1,4 @@
 
-
-import React from "react";
-import AboutPage from "../about/page";
 import { revalidateTag } from "next/cache";
 
 // Refresh data every 60 seconds

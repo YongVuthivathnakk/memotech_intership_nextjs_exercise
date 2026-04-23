@@ -2,7 +2,7 @@
 import IncreaseButton from "@/components/increase-button";
 
 
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 
 
 // =================== Regular Metadata ================
