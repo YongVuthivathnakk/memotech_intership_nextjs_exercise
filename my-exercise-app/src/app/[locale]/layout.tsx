@@ -54,6 +54,7 @@ export default async function RootLayout({
           <Link href={`/${locale}/note`}>Note &nbsp;</Link>
           <Link href={`/${locale}/data`}>Data &nbsp;</Link>
           <Link href={`/${locale}/tanstack-query`}>Tanstack Query &nbsp;</Link>
+          <Link href={`/${locale}/card`}>Card &nbsp;</Link>
         </nav>
         <hr />
         <NextIntlClientProvider>
