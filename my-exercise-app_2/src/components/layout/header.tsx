@@ -30,7 +30,7 @@ export default function Header() {
       </div>
       <button onClick={handleLanguageToggle} className="flex items-center gap-3 bg-blue-500 px-4 py-2 rounded-lg shadow-sm font-bold text-white hover:bg-blue-600 cursor-pointer active:bg-blue-700">
         <Globe />
-              <span className="text-sm ">{t("button-label")}</span>
+              <span className="text-sm ">{t("buttonLabel")}</span>
       </button>
     </header>
   );

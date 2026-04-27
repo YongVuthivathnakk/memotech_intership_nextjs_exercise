@@ -1,13 +1,21 @@
 {
   "Header": {
     "title": "បញ្ជីកិច្ចការរបស់ខ្ញុំ",
-    "button-label": "English"
+    "buttonLabel": "English"
   },
   "TodoInput": {
-    "button-label": "បន្ធែមកិច្ចការ​",
+    "buttonLabel": "បន្ធែមកិច្ចការ​",
     "placeholder": "បន្ធែមកិច្ចការថ្មី..."
   },
   "TodoEmpty" : {
     "label": "មិនទាន់មានកិច្ចការទេ។ បន្ថែមមួយដើម្បីចាប់ផ្តើម!"
+  },
+  "TodoItem" : {
+    "pending": "កំពុងរង់ចាំ",
+    "complete": "បានបញ្ចប់",
+     "dialogTitle": "តើអ្នកប្រាកដទេ?",
+    "dialogDescription": "សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។ វានឹងលុបគណនីរបស់អ្នកជាអចិន្ត្រៃយ៍ និងលុបទិន្នន័យរបស់អ្នកចេញពីម៉ាស៊ីនមេរបស់យើង។",
+    "cancelLabel": "ចាកចេញ",
+    "deleteLabel": "លុបចោល"
   }
 }

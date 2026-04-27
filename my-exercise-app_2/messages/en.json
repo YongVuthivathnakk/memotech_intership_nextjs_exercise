@@ -1,13 +1,20 @@
 {
   "Header": {
     "title": "My Todo List",
-    "button-label": "ខ្មែរ"
+    "buttonLabel": "ខ្មែរ"
   },
   "TodoInput": {
-    "button-label": "Add Task",
+    "buttonLabel": "Add Task",
     "placeholder": "Add new task..."
   },
    "TodoEmpty" : {
     "label": "No tasks yet. Add one to get started!"
+  }, "TodoItem" : {
+    "pending": "Pending",
+    "complete": "Completed",
+    "dialogTitle": "Are you absolutely sure?",
+    "dialogDescription": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
+      "cancelLabel": "cancel",
+    "deleteLabel": "delete"
   }
 }
