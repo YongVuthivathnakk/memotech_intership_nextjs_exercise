@@ -1,0 +1,13 @@
+{
+  "Header": {
+    "title": "My Todo List",
+    "button-label": "ខ្មែរ"
+  },
+  "TodoInput": {
+    "button-label": "Add Task",
+    "placeholder": "Add new task..."
+  },
+   "TodoEmpty" : {
+    "label": "No tasks yet. Add one to get started!"
+  }
+}
