@@ -34,12 +34,55 @@ export default function TodoList() {
     }
   }
 
+  async function handleIsComplete(id: string, completed: boolean) {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}api/todos/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ completed }),
+        },
+      );
+      if (!response.ok) throw new Error("Failed to update todo");
+      const updated = await response.json();
+      setTodos((prev) => prev.map((todo) => (todo.id === id ? updated : todo)));
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function handleEdit(id: string, title: string) {
+
+    
+    
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}api/todos/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title }),
+        },
+      );
+
+      if (!response.ok) throw new Error("Failed to update todo");
+      const updated = await response.json();
+      setTodos((prev) => prev.map((todo) => (todo.id === id ? updated : todo)));
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   async function handleDelete(id: string) {
     try {
-     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}api/todos/${id}`, {
-      method: "DELETE",
-    });
-      
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}api/todos/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
+
       if (!response.ok) throw new Error("Failed to delete todo");
       setTodos((prev) => prev.filter((todo) => todo.id !== id));
     } catch (e) {
@@ -55,10 +98,13 @@ export default function TodoList() {
       .reverse()
       .map((todo) => (
         <TodoItem
+          key={todo.id}
           id={todo.id}
           handleDelete={handleDelete}
+          handleEdit={handleEdit}
+          isComplete={todo.completed}
+          handleIsComplete={handleIsComplete}
           title={todo.title}
-          key={todo.id}
           createAt={todo.createdAt}
         />
       ));

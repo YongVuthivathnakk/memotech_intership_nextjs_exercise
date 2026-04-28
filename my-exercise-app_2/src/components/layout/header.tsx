@@ -21,6 +21,7 @@ export default function Header() {
     router.push(newPath);
   }
 
+  console.log("render")
 
   return (
     <header className="flex items-center justify-between bg-white shadow-xs px-6 py-6 sm:px-16 md:px-32 lg:px-64">

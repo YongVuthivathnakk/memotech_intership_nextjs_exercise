@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs, { read, write } from 'fs';
 import { Todo } from '../../types/todo';
 import {v4 as uuidV4} from "uuid"
 
@@ -26,6 +26,7 @@ export function createTodo(title: string): Todo {
     const newTodo: Todo = {
         id: uuidV4(),
         title: title,
+        completed: false,
         createdAt: new Date().toISOString(),
     }
     todos.push(newTodo);
@@ -39,6 +40,37 @@ export function deleteById(id:string):void {
 
     if (filtered.length === todos.length) throw new Error(`Todo ${id} not found`);
     writeDB(filtered);
-    console.log(filtered)
 }
 
+
+
+export function updateById(id: string, data: Partial<Pick<Todo, "title" | "completed">>) : Todo {
+    const todos = readDB();
+    const index = todos.findIndex((todo: Todo) => todo.id === id)
+    if (index === -1) throw new Error(`Todo with ${id} cannot be found.`)
+    
+    if (data.title !== undefined) todos[index].title = data.title;
+    if (data.completed !== undefined) todos[index].completed = data.completed;
+    
+    writeDB(todos);
+    return todos[index];
+}
+
+
+// export function updateCompleteById(id: string, completed: boolean) : Todo {
+//     const todos = readDB();
+//     const index = todos.findIndex((todo: Todo) => todo.id === id);
+//     if (index === -1) throw new Error(`Todo with ${id} cannot be found.`)
+//     todos[index].completed = completed;
+//     writeDB(todos);
+//     return todos[index];
+// }
+
+// export function editById(id: string, title: string): Todo {
+//     const todos = readDB();
+//     const index = todos.findIndex((todo: Todo) => todo.id === id);
+//     if (index === -1) throw new Error(`Todo with ${id} cannot be found.`)
+//     todos[index].title = title;
+//     writeDB(todos);
+//     return todos[index];
+// }

@@ -24,7 +24,7 @@ export default function TodoInput() {
   }
 
   async function handleSubmit(e: any) {
-    //  e.preventDefault();            
+    //  e.preventDefault();
     if (!title.trim()) return;
     setIsLoading(true);
     try {

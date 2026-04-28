@@ -14,7 +14,7 @@
     "complete": "Completed",
     "dialogTitle": "Are you absolutely sure?",
     "dialogDescription": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
-      "cancelLabel": "cancel",
-    "deleteLabel": "delete"
+    "cancelLabel": "Cancel",
+    "deleteLabel": "Delete"
   }
 }

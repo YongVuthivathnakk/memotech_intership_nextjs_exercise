@@ -1,84 +1,16 @@
 {
   "todos": [
     {
-      "id": "1",
-      "title": "Buy groceries for the week",
-      "createdAt": "2024-01-15T08:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "title": "Finish the quarterly report",
-      "createdAt": "2024-01-15T09:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "title": "Call the doctor for an appointment",
-      "createdAt": "2024-01-15T10:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "title": "Fix the bug in the login page",
-      "createdAt": "2024-01-14T08:00:00.000Z"
-    },
-    {
-      "id": "5",
-      "title": "Read 30 pages of the book",
-      "createdAt": "2024-01-14T09:00:00.000Z"
-    },
-    {
-      "id": "6",
-      "title": "Clean the apartment",
-      "createdAt": "2024-01-16T07:00:00.000Z"
-    },
-    {
-      "id": "7",
-      "title": "Reply to client emails",
-      "createdAt": "2024-01-13T11:00:00.000Z"
-    },
-    {
-      "id": "8",
-      "title": "Go for a 30 minute run",
-      "createdAt": "2024-01-16T06:00:00.000Z"
-    },
-    {
-      "id": "8e3c1d41-8568-44de-b371-6a7d7be72e7d",
-      "title": "d",
-      "createdAt": "2026-04-27T08:09:28.446Z"
-    },
-    {
-      "id": "0b70704c-59de-4550-a412-81c8cafa4777",
+      "id": "c3bb1722-69f8-49ef-8f40-6863741ffdf5",
       "title": "new",
-      "createdAt": "2026-04-27T08:10:26.927Z"
+      "completed": true,
+      "createdAt": "2026-04-28T05:15:28.362Z"
     },
     {
-      "id": "d3123801-27b9-468d-bc82-e19d5f3a433e",
-      "title": "d",
-      "createdAt": "2026-04-27T08:11:56.984Z"
-    },
-    {
-      "id": "e7392dad-0d04-4c1d-ba70-33b5c3a13150",
-      "title": "d",
-      "createdAt": "2026-04-27T08:13:01.574Z"
-    },
-    {
-      "id": "18580dfd-48db-4d23-8ea7-1eafc3afb9bb",
-      "title": "new",
-      "createdAt": "2026-04-27T08:13:22.182Z"
-    },
-    {
-      "id": "1da1d0a0-e533-42dd-b561-216e48be1fde",
-      "title": "n",
-      "createdAt": "2026-04-27T08:14:37.724Z"
-    },
-    {
-      "id": "7d3192c4-879c-4b14-adf1-046b2505812e",
-      "title": "nakk",
-      "createdAt": "2026-04-27T08:22:39.088Z"
-    },
-    {
-      "id": "4eafe3b4-3395-4b11-b1fe-ff0d49328e4b",
-      "title": "d",
-      "createdAt": "2026-04-27T08:22:49.170Z"
+      "id": "1f42cdc4-d71c-4504-a169-f98e1f0a804d",
+      "title": "new1",
+      "completed": true,
+      "createdAt": "2026-04-28T05:16:23.361Z"
     }
   ]
 }
