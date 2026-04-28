@@ -1,13 +1,28 @@
-import { createTodo, deleteById, getTodos,  } from "@/lib/db";
-import { NextApiRequest, NextApiResponse } from "next";
+import { createTodo, deleteById, getTodos } from "@/lib/db";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request: NextRequest, response: NextResponse) {
+  try {
     const data = getTodos();
-    return Response.json({todos: data})
+    return NextResponse.json({ todos: data }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest, response: NextResponse) {
+  try {
     const { title } = await request.json();
     const newTodo = createTodo(title);
-    return Response.json(newTodo, { status: 201 });
+
+    return NextResponse.json(newTodo, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }

@@ -1,16 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "c3bb1722-69f8-49ef-8f40-6863741ffdf5",
-      "title": "new",
-      "completed": true,
-      "createdAt": "2026-04-28T05:15:28.362Z"
-    },
-    {
-      "id": "1f42cdc4-d71c-4504-a169-f98e1f0a804d",
-      "title": "new1",
-      "completed": true,
-      "createdAt": "2026-04-28T05:16:23.361Z"
-    }
-  ]
+  "todos": []
 }

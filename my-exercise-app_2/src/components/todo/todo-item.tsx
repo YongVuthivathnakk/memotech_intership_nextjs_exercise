@@ -89,17 +89,16 @@ export default function TodoItem({
           <DialogContent>
             <DialogHeader>
               <DialogTitle className="text-lg font-bold">
-                  {/* {t("dialogTitle")} */}
-                  Edit Todo
+                  {t("editTitle")}
+
               </DialogTitle>
                 <DialogDescription>
-                  {/* {t("dialogDescription")} */}
-                  Click save when you're done.
+                  {t("editDescription")}
               </DialogDescription>
               </DialogHeader>
               <FieldGroup>
                  <Field>
-              <Label htmlFor="name-1">Title</Label>
+                  <Label htmlFor="name-1">{t("title")}</Label>
               <Input id="name-1" name="title" onChange={(e) => setTitleInput(e.target.value)} defaultValue={titleInput} />
             </Field>
               </FieldGroup>
@@ -110,12 +109,10 @@ export default function TodoItem({
                     {t("cancelLabel")}
                   </Button>
                   <Button
-                    // variant="destructive"
                     className="cursor-pointer bg-blue-500"
                     onClick={onEdit}
                   >
-                      {/* {t("deleteLabel")}| */}
-                      Save Changes
+                      {t("saveLabel")}
                   </Button>
                 </div>
               </DialogClose>
@@ -131,9 +128,9 @@ export default function TodoItem({
           <DialogContent>
             <DialogHeader>
               <DialogTitle className="text-lg font-bold">
-                {t("dialogTitle")}
+                {t("deleteTitle")}
               </DialogTitle>
-              <DialogDescription>{t("dialogDescription")}</DialogDescription>
+              <DialogDescription>{t("deleteDescription")}</DialogDescription>
             </DialogHeader>
             <DialogFooter>
               <DialogClose asChild>

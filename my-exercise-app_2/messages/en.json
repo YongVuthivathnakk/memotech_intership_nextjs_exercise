@@ -12,9 +12,14 @@
   }, "TodoItem" : {
     "pending": "Pending",
     "complete": "Completed",
-    "dialogTitle": "Are you absolutely sure?",
-    "dialogDescription": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
+     "deleteTitle": "Are you absolutely sure?",
+    "deleteDescription": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
+    "editTitle": "Edit Todo",
+    "editDescription": "Click save when you're done.",
     "cancelLabel": "Cancel",
-    "deleteLabel": "Delete"
+    "deleteLabel": "Delete",
+    "saveLabel": "Save Changes",
+    "title": "Title"
+    
   }
 }
