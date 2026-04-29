@@ -3,9 +3,15 @@ import { cookies } from "next/headers";
 export async function GET() {
     const cookieStore = await cookies(); 
 
-    cookieStore.set("secret", 'super-secret-value', {
+    cookieStore.set("demo", 'secret-value', {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
+        secure: true,
+        sameSite: 'lax',
+        path: "/",
+    }) 
+        cookieStore.set("noHttp", 'public-value', {
+        httpOnly: false,
+        secure: true,
         sameSite: 'lax',
         path: "/",
     }) 
