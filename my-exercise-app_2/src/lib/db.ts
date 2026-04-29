@@ -1,5 +1,5 @@
 import fs, { read, write } from 'fs';
-import { Todo } from '../../types/todo';
+import { Todo } from '../types/todo';
 import {v4 as uuidV4} from "uuid"
 
 const DB_PATH = "/data/todo.json";

@@ -3,40 +3,30 @@
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { Todo } from "../../../types/todo";
+import { Todo } from "../../types/todo";
 import { useRouter } from "next/navigation";
+import useTodos from "@/app/hooks/useTodos";
 
 export default function TodoInput() {
   const [title, setTitle] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+
+  const {handleCreate} = useTodos()
 
   const t = useTranslations("TodoInput");
 
-  async function createTodo(title: string):Promise<Todo> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}api/todos`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title }),
-    });
-    if (!res.ok) throw new Error("Failed to create todo");
-    return res.json();
-  }
 
-  async function handleSubmit(e: any) {
-    //  e.preventDefault();
+  function handleSubmit(e: any) {
+     e.preventDefault();
     if (!title.trim()) return;
-    setIsLoading(true);
+  
     try {
-      await createTodo(title);
-      setTitle(""); // clear input on success
-
+        handleCreate(title);
+        setTitle(""); // clear input on success
     } catch (e) {
-      console.error(e);
-    } finally {
-      setIsLoading(false);
-
+      throw new Error("Fail to create todo");  
     }
+
+
   }
 
   return (

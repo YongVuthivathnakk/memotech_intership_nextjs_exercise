@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { EditIcon, Trash2 } from "lucide-react";
+import { EditIcon, LoaderCircleIcon, Trash2 } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -22,6 +22,7 @@ interface TodoItemProps {
   title: string;
   createAt: string;
   isComplete: boolean;
+  isLoading: boolean;
   handleEdit: (id: string, title: string) => void;
   handleDelete: (id: string) => void;
   handleIsComplete: (id: string, isComplete: boolean) => void;
@@ -32,6 +33,7 @@ export default function TodoItem({
   title,
   handleIsComplete,
   isComplete,
+  isLoading,
   createAt,
   handleDelete,
   handleEdit,
@@ -67,90 +69,93 @@ export default function TodoItem({
         </p>
       </div>
 
-      
       <div className="flex items-center gap-6">
-        <p
-          className={cn(
-            isComplete
-              ? "bg-emerald-100 text-emerald-500 border-emerald-200"
-              : "bg-amber-100 text-amber-500 border-amber-200",
-            "border-2 text-center px-2 py-1 rounded-md transition-all",
-          )}
-        >
-          {isComplete ? t("complete") : t("pending")}
-      </p>
+        {isLoading ? (
+          <LoaderCircleIcon className="animate-spin" />
+        ) : (
+          <p
+            className={cn(
+              isComplete
+                ? "bg-emerald-100 text-emerald-500 border-emerald-200"
+                : "bg-amber-100 text-amber-500 border-amber-200",
+              "border-2 text-center px-2 py-1 rounded-md transition-all",
+            )}
+          >
+            {isComplete ? t("complete") : t("pending")}
+          </p>
+        )}
 
-      <div className="flex items-center gap-4">
-
+        <div className="flex items-center gap-4">
           <Dialog>
-          <DialogTrigger className="p-2 rounded-full text-blue-500 cursor-pointer hover:bg-blue-100 active:bg-blue-200 transition-colors">
-            <EditIcon className="w-5 h-5" />
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-lg font-bold">
+            <DialogTrigger className="p-2 rounded-full text-blue-500 cursor-pointer hover:bg-blue-100 active:bg-blue-200 transition-colors">
+              <EditIcon className="w-5 h-5" />
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-lg font-bold">
                   {t("editTitle")}
-
-              </DialogTitle>
-                <DialogDescription>
-                  {t("editDescription")}
-              </DialogDescription>
+                </DialogTitle>
+                <DialogDescription>{t("editDescription")}</DialogDescription>
               </DialogHeader>
               <FieldGroup>
-                 <Field>
+                <Field>
                   <Label htmlFor="name-1">{t("title")}</Label>
-              <Input id="name-1" name="title" onChange={(e) => setTitleInput(e.target.value)} defaultValue={titleInput} />
-            </Field>
+                  <Input
+                    id="name-1"
+                    name="title"
+                    onChange={(e) => setTitleInput(e.target.value)}
+                    defaultValue={titleInput}
+                  />
+                </Field>
               </FieldGroup>
-            <DialogFooter>
-              <DialogClose asChild>
-                <div className="flex gap-4">
-                  <Button variant="outline" className="cursor-pointer">
-                    {t("cancelLabel")}
-                  </Button>
-                  <Button
-                    className="cursor-pointer bg-blue-500"
-                    onClick={onEdit}
-                  >
+              <DialogFooter>
+                <DialogClose asChild>
+                  <div className="flex gap-4">
+                    <Button variant="outline" className="cursor-pointer">
+                      {t("cancelLabel")}
+                    </Button>
+                    <Button
+                      className="cursor-pointer bg-blue-500"
+                      onClick={onEdit}
+                    >
                       {t("saveLabel")}
-                  </Button>
-                </div>
-              </DialogClose>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+                    </Button>
+                  </div>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
 
-
-        <Dialog>
-          <DialogTrigger className="p-2 rounded-full text-red-500 cursor-pointer hover:bg-red-100 active:bg-red-200 transition-colors">
-            <Trash2 className="w-5 h-5" />
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-lg font-bold">
-                {t("deleteTitle")}
-              </DialogTitle>
-              <DialogDescription>{t("deleteDescription")}</DialogDescription>
-            </DialogHeader>
-            <DialogFooter>
-              <DialogClose asChild>
-                <div className="flex gap-4">
-                  <Button variant="outline" className="cursor-pointer">
-                    {t("cancelLabel")}
-                  </Button>
+          <Dialog>
+            <DialogTrigger className="p-2 rounded-full text-red-500 cursor-pointer hover:bg-red-100 active:bg-red-200 transition-colors">
+              <Trash2 className="w-5 h-5" />
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-lg font-bold">
+                  {t("deleteTitle")}
+                </DialogTitle>
+                <DialogDescription>{t("deleteDescription")}</DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <div className="flex gap-4">
+                    <Button variant="outline" className="cursor-pointer">
+                      {t("cancelLabel")}
+                    </Button>
                     <Button
                       variant={"destructive"}
-                    className="cursor-pointer"
-                    onClick={() => handleDelete(id)}
-                  >
-                    {t("deleteLabel")}
-                  </Button>
-                </div>
-              </DialogClose>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      </div>
+                      className="cursor-pointer"
+                      onClick={() => handleDelete(id)}
+                    >
+                      {t("deleteLabel")}
+                    </Button>
+                  </div>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
     </div>
   );

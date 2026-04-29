@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,22 +21,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{locale: string}>
+  params: Promise<{ locale: string }>;
 }>) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body >
+      <body>
         <NextIntlClientProvider>
           <div className="min-h-full flex flex-col">
-          {children}
+              {children}
           </div>
-
         </NextIntlClientProvider>
       </body>
     </html>
